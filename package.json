@@ -1,0 +1,19 @@
+{
+  "name": "flicksearch-nodejs",
+  "version": "1.0.0",
+  "description": "search movie at your terminal",
+  "main": "bin/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "stablelane",
+  "license": "ISC",
+  "bin": {
+    "flicksearch": "./bin/index.js"
+  },
+  "dependencies": {
+    "cli-select": "^1.1.2",
+    "open": "^10.1.0"
+  }
+}
