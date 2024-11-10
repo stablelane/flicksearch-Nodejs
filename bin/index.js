@@ -5,17 +5,18 @@ import cliSelect from "cli-select"
 import open from "open"
 
 if (moviename) {
-  let arrmovie = []
+  //let arrmovie = []
   fetch(`http://www.omdbapi.com/?s=${moviename}&apikey=1170f02c`)
     .then(res => res.json())
     .then(data => {
-      let arr = {
-        values: data.Search.map(item => {
+
+      let movieArr = {
+        values: data.Search.filter(item => item.Type === 'movie').map(item => {
           let string = "Name: " + item.Title + " Year: " + item.Year + " Type: " + item.Type
           return string
         })
       }
-      cliSelect(arr)
+      cliSelect(movieArr)
         .then((selected) => openMovie(data.Search[selected.id].imdbID))
     })
 
